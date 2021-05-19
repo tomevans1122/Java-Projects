@@ -11,9 +11,6 @@ import java.util.Scanner;
 
 public class Money {
 
-
-    // MAIN EXECUTION SCRIPT
-
     public static HttpURLConnection connection;
 
     public static void main(String[] args) {
@@ -50,15 +47,14 @@ public class Money {
             // for parsing base
             //System.out.println(myresponse.getString("base"));
 
-            // rates are enclosed, and is an object not auto
+            // rates are enclosed and is an object not auto
             JSONObject ratesObject = new JSONObject(myresponse.getJSONObject("rates").toString());
-            //System.out.println(ratesObject);
+            
 
             // for specific currency
             //System.out.println("USD = $" + ratesObject.getDouble("USD"));
 
-            // CREATE THE QUESTIONS WITHIN THE TRY-CATCH LOOP OF THE API HERE
-            // TIDY IT UP LATER
+           
             double val = currencyInput();
             System.out.println("That is £" + val); //Value in £
             System.out.println("Please choose to convert to either EUR or USD: ");
@@ -82,7 +78,7 @@ public class Money {
         }
 
 
-    } // End of main execution script
+    }
 
     // METHOD FOR RECEIVING VALID VALUE INPUT
     public static double currencyInput() {
